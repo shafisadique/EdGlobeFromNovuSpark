@@ -1,0 +1,122 @@
+<header class="header">
+  <!-- Logo -->
+  <a routerLink="/" class="logo">
+
+    <img src="assets/edglobe.jpeg" style="width: 190px; height: 50px;">
+  </a>
+
+  <!-- Desktop Nav -->
+  <nav class="nav-links">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+
+    <div class="dropdown" #featuresRef
+         (mouseenter)="openFeatureDropdown()"
+         (mouseleave)="closeFeatureDropdown()">
+      <a href="javascript:void(0)" routerLink="/features" class="has-caret">Features <i class="fas fa-chevron-down"></i></a>
+
+      <!-- Mega Menu -->
+      <div class="mega-menu">
+        <div class="mega-column">
+          <h4>Academic Suite</h4>
+          <a routerLink="/features/admissions">Smart Admissions</a>
+          <a routerLink="/features/attendance">Automated Attendance</a>
+          <a routerLink="/features/gradebook">Gradebook & Results</a>
+          <a routerLink="/features/timetable">Digital Timetable</a>
+          <a routerLink="/features/noticeboard">Event & Noticeboard <span class="badge">New</span></a>
+        </div>
+        <div class="mega-column">
+          <h4>People Management</h4>
+          <a routerLink="/features/parent-portal">Student & Parent Portal</a>
+          <a routerLink="/features/teacher-workspace">Teacher Workspace</a>
+          <a routerLink="/features/hr-payroll">Staff HR & Payroll</a>
+          <a routerLink="/features/certificates">ID & Certificate</a>
+          <a routerLink="/features/access-control">Role-based Access</a>
+        </div>
+        <div class="mega-column">
+          <h4>Finance & Operations</h4>
+          <a routerLink="/features/fee-collection">Online Fee Collection</a>
+          <a routerLink="/features/accounting">Accounting Dashboard</a>
+          <a routerLink="/features/data-import">Bulk Data Import</a>
+          <a routerLink="/features/reports">Custom Reports</a>
+          <a routerLink="/features/security">Data Backup & Security</a>
+        </div>
+        <div class="mega-column">
+          <h4>Integrations</h4>
+          <a routerLink="/features/whatsapp-sms">WhatsApp & SMS Alerts <span class="badge">Live</span></a>
+          <a routerLink="/features/payment-gateways">Payment Gateways</a>
+          <a routerLink="/features/dlt-compliance">DLT Compliance</a>
+          <a routerLink="/features/third-party-apis">Third-Party APIs</a>
+          <a routerLink="/features/digital-marketing">Digital Marketing</a>
+        </div>
+      </div>
+    </div>
+
+    <a routerLink="/about-us" routerLinkActive="active">About Us</a>
+    <a routerLink="/contact-us" routerLinkActive="active">Contact</a>
+  </nav>
+
+  <!-- Header Actions -->
+  <div class="header-actions">
+    <!-- <button class="btn-login">Login</button>
+    <button class="btn-signup">Get Started</button> -->
+    <button class="mobile-menu-btn" (click)="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" #mobileMenu>
+  <div class="mobile-menu-header">
+    <span class="mobile-logo">Edglobe</span>
+    <button class="close-btn" (click)="closeMenu()"><i class="fas fa-times"></i></button>
+  </div>
+
+  <nav class="mobile-nav-links">
+    <a routerLink="/" (click)="closeMenu()" routerLinkActive="active">Home</a>
+   <div class="dropdown" (click)="toggleFeatureDropdown()">
+    <a class="has-caret">Features <i class="fas fa-chevron-down"></i></a>
+  <div class="mega-menu" #mobileFeaturesRef>
+    <div class="mega-column">
+      <h4>Academic Suite</h4>
+      <a routerLink="/features" (click)="closeMenu()">Smart Admissions</a>
+      <a routerLink="/features" (click)="closeMenu()">Automated Attendance</a>
+      <a routerLink="/features" (click)="closeMenu()">Gradebook & Results</a>
+      <a routerLink="/features" (click)="closeMenu()">Digital Timetable</a>
+      <a routerLink="/features" (click)="closeMenu()">Event & Noticeboard <span class="badge">New</span></a>
+    </div>
+    <div class="mega-column">
+      <h4>People Management</h4>
+      <a routerLink="/features" (click)="closeMenu()">Student & Parent Portal</a>
+      <a routerLink="/features" (click)="closeMenu()">Teacher Workspace</a>
+      <a routerLink="/features" (click)="closeMenu()">Staff HR & Payroll</a>
+      <a routerLink="/features/certificates" (click)="closeMenu()">ID & Certificate</a>
+      <a routerLink="/features/access-control" (click)="closeMenu()">Role-based Access</a>
+    </div>
+    <div class="mega-column">
+      <h4 >Finance & Operations</h4>
+      <a routerLink="/features/fee-collection" (click)="closeMenu()">Online Fee Collection</a>
+      <a routerLink="/features/accounting" (click)="closeMenu()">Accounting Dashboard</a>
+      <a routerLink="/features/data-import" (click)="closeMenu()">Bulk Data Import</a>
+      <a routerLink="/features/reports" (click)="closeMenu()">Custom Reports</a>
+      <a routerLink="/features/security" (click)="closeMenu()">Data Backup & Security</a>
+    </div>
+    <div class="mega-column">
+      <h4>Integrations</h4>
+      <a routerLink="/features/whatsapp-sms" (click)="closeMenu()">WhatsApp & SMS Alerts <span class="badge">Live</span></a>
+      <a routerLink="/features/payment-gateways" (click)="closeMenu()">Payment Gateways</a>
+      <a routerLink="/features/dlt-compliance" (click)="closeMenu()">DLT Compliance</a>
+      <a routerLink="/features/third-party-apis" (click)="closeMenu()">Third-Party APIs</a>
+      <a routerLink="/features/digital-marketing" (click)="closeMenu()">Digital Marketing</a>
+    </div>
+  </div>
+</div>
+    <a routerLink="/about-us" (click)="closeMenu()" routerLinkActive="active">About Us</a>
+    <a routerLink="/contact-us" (click)="closeMenu()" routerLinkActive="active">Contact</a>
+  </nav>
+
+  <div class="mobile-menu-actions">
+    <!-- <button class="btn-login">Login</button>
+    <button class="btn-signup">Get Started</button> -->
+  </div>
+</div>
