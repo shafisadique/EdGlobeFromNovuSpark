@@ -7,9 +7,9 @@ import { FeaturesComponent } from './features/features.component';
 
 export const routes: Routes = [
       { path: '', component: LandingComponent, title: 'EdGlobe — Home' },
-      { path: 'about-us', component: AboutUsComponent, title: 'EdGlobe — about-us' },
-      { path: 'contact-us', component: ContactUsComponent, title: 'EdGlobe — contact-us' },
-      { path: 'features', component: FeaturesComponent, title: 'EdGlobe — features' },
+      // { path: 'about-us', component: AboutUsComponent, title: 'EdGlobe — about-us' },
+      // { path: 'contact-us', component: ContactUsComponent, title: 'EdGlobe — contact-us' },
+      // { path: 'features', component: FeaturesComponent, title: 'EdGlobe — features' },
 
   { path: 'dashboard', component: DashboardComponent, title: 'Dashboard | EdGlobe' },
   { path: '**', redirectTo: '' }

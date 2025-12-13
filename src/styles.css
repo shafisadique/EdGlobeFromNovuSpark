@@ -3,3 +3,55 @@
     margin: 0;
     padding: 0;
 }
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+h1, h2, h3, h4, .nav-links a, .neo-bottom-nav .nav-item span {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.5px;
+}
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+}
+
+section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* HIDE SCROLLBAR BUT KEEP SCROLLING FUNCTIONALITY */
+/* Works on Chrome, Edge, Safari, Firefox */
+
+/* Webkit browsers (Chrome, Edge, Safari) */
+*::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;        /* Firefox 64+ */
+  -ms-overflow-style: none;     /* IE and Edge */
+}
+
+/* Optional: Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: For better mobile touch scrolling */
+body {
+  -webkit-overflow-scrolling: touch;
+}

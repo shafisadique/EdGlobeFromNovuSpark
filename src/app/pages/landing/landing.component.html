@@ -1,37 +1,96 @@
-<!-- Hero Section -->
-<section class="hero" #heroSection>
-  <div class="container">
-    <div class="hero-content">
-      
-      <!-- Left Side: Text -->
-      <div class="hero-text">
-        <h1>
-          Run Your School Smarter with
-          <span class="highlight"> EdGlobe from NovuSpark</span>
-        </h1>
-        <p>
-          All-in-one school management system to simplify attendance, exams,
-          fees, and communication. Save time, reduce errors, and focus on
-          student success.
-        </p>
-        <div class="hero-buttons">
-          <a href="" class="btn btn-primary" routerLink="/contact-us">📅 Book a Demo</a>
-          <a href="#features" class="btn btn-outline">Learn More</a>
+<section class="hero-banner" #heroSection id="home">
+  <div class="slides-container">
+
+    <!-- SLIDE 1 -->
+    <div class="slide" [class.active]="currentSlide === 0">
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/firstslidemobile.png">
+        <img src="assets/slider1-desktop.jpg" class="slide-bg" [class.animate]="currentSlide === 0">
+      </picture>
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="content bottom" [class.animate]="currentSlide === 0">
+          <h1>Run Your School Smarter with <span class="highlight">EdGlobe</span></h1>
+          <p>All-in-one system for attendance, fees, exams & communication</p>
+          <a (click)="scroll('contact')" class="btn">Book a Demo</a>
         </div>
       </div>
-
-      <!-- Right Side: Mockup -->
-      <div class="hero-image">
-        <div class="mockup-box">
-          <img src="assets/edglobehero.jpeg" >
-          <!-- Replace with screenshot later -->
-        </div>
-      </div>
-
     </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide" [class.active]="currentSlide === 1">
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/less-paperwork.png">
+        <img src="assets/slider2-desktop.jpg" class="slide-bg" [class.animate]="currentSlide === 1">
+      </picture>
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="content bottom right" [class.animate]="currentSlide === 1">
+          <h1>Less Paperwork<br><span class="highlight">More Teaching</span></h1>
+          <p>Automate routine tasks. Focus on students</p>
+          <a (click)="scroll('contact')" class="btn">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide" [class.active]="currentSlide === 2">
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/happy-student.png">
+        <img src="assets/slider3-desktop.jpg" class="slide-bg" [class.animate]="currentSlide === 2">
+      </picture>
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="content bottom right" [class.animate]="currentSlide === 2">
+          <h1>Happy Students<br><span class="highlight">Happy Parents</span></h1>
+          <p>Real-time updates keep everyone connected</p>
+          <a (click)="scroll('contact')" class="btn">Try Free</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="slide" [class.active]="currentSlide === 3">
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/instance-communacation.png">
+        <img src="assets/slider4-desktop.jpg" class="slide-bg" [class.animate]="currentSlide === 3">
+      </picture>
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="content bottom right" [class.animate]="currentSlide === 3">
+          <h1>Instant<br><span class="highlight">Communication</span></h1>
+          <p>SMS, circulars & announcements in one click</p>
+          <a (click)="scroll('contact')" class="btn">See Features</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5 -->
+    <div class="slide" [class.active]="currentSlide === 4">
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/slider1-mobile-view.png">
+        <img src="assets/ecosystem-desktop.jpeg" class="slide-bg" [class.animate]="currentSlide === 4">
+      </picture>
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="content bottom right" [class.animate]="currentSlide === 4">
+          <h1>One Platform<br><span class="highlight">Everything</span></h1>
+          <p>Attendance • Fees • Exams • Library • Transport</p>
+          <a (click)="scroll('contact')" class="btn">Start Free</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="dots">
+    <span class="dot" 
+          *ngFor="let n of [0,1,2,3,4]; let i = index"
+          [class.active]="currentSlide === i"
+          (click)="goToSlide(i)">
+    </span>
   </div>
 </section>
-
 
 <!-- Features Section -->
 <section class="features-section" #featuresSection>
@@ -99,6 +158,7 @@
   </div>
 </section>
 
+
 <!-- Advanced Modules Section -->
 <section class="modules-section" #modulesSection>
   <div class="modules-content">
@@ -120,6 +180,10 @@
   <div class="modules-image" >
     <img src="assets/all-in-one-app.png" alt="School Management Modules">
   </div>
+</section>
+
+<section id="about">
+  <app-about-us #aboutUs></app-about-us>
 </section>
 
 <!-- Core Benefits Section -->
@@ -212,44 +276,11 @@
   </div>
 </section>
 
-<!-- Testimonials Section (Commented Out) -->
-<!--
-<section class="testimonials">
-  <div class="section-title">
-    <h2>What Our Clients Say</h2>
-    <p>Hear from educational institutions that have transformed their operations.</p>
-  </div>
-  <div class="testimonial-cards">
-    <div class="testimonial-card">
-      <p class="testimonial-text">"Transformed how we manage our school."</p>
-      <div class="testimonial-author">
-        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
-        <div>
-          <strong>Sarah Johnson</strong>
-          <p>Principal, Greenwood High</p>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <p class="testimonial-text">"Improved parent engagement significantly."</p>
-      <div class="testimonial-author">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
-        <div>
-          <strong>Michael Chen</strong>
-          <p>IT Director, Lincoln Academy</p>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <p class="testimonial-text">"Simplified my administrative tasks."</p>
-      <div class="testimonial-author">
-        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Emily Rodriguez">
-        <div>
-          <strong>Emily Rodriguez</strong>
-          <p>Teacher, Oakwood Middle School</p>
-        </div>
-      </div>
-    </div>
-  </div>
+
+<section id="features">
+<app-features></app-features>
 </section>
--->
+
+<section id="contact">
+<app-contact-us></app-contact-us>
+</section>
