@@ -647,6 +647,8 @@
 
   .section-title h1 {
     font-size: 28px;
+  line-height: 2rem;
+
   }
 
   .feature-card {
@@ -1077,6 +1079,7 @@ button.testimonial-card:nth-child(2) { animation-delay: 0.6s; }
   }
   .section-title h1{
     font-size: 20px;
+  line-height: 2rem;
     font-weight: 700;
 }
   .features { grid-template-columns: 1fr;
