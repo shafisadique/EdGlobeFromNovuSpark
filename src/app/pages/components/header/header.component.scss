@@ -1,4 +1,4 @@
-/* DESKTOP HEADER - EXACTLY LIKE YOUR SCREENSHOT */
+/* DESKTOP HEADER - EXACTLY LIKE YOUR SCREENSHOT (Unchanged) */
 .desktop-header {
   position: fixed;
   top: 0;
@@ -53,7 +53,7 @@
 
 /* WHEN SCROLLED */
 .desktop-header.scrolled {
-   backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   background: rgba(255,255,255,0.75);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -77,7 +77,7 @@
   }
 }
 
-/* Mobile Nav - Keep as is */
+/* Mobile Nav - Updated for Login Replacement */
 .neo-bottom-nav {
   position: fixed;
   bottom: 12px;
@@ -109,11 +109,17 @@
   font-size: 12px;
   color: #9a9a9a;
   margin-top: 6px; /* adjusts spacing visually */
+  cursor: pointer; /* Add for better UX on login item */
 }
 
 .neo-bottom-nav .nav-item i {
   font-size: 20px;
   margin-bottom: 4px;
+}
+
+/* UPDATED: Login Item Styling – Slight accent for CTA feel */
+.neo-bottom-nav .nav-item[for-login] {  /* Optional: Target if you add class="login-item" to HTML */
+  i { color: #44A1A3; }  /* Blue accent on icon */
 }
 
 .center-float {

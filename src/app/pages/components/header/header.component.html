@@ -8,27 +8,31 @@
     <a (click)="scroll('features')" [class.active]="activeSection==='features'">Features</a>
     <a (click)="scroll('about')" [class.active]="activeSection==='about'">About</a>
     <a (click)="scroll('contact')" [class.active]="activeSection==='contact'">Contact</a>
+    <a href="https://edglobe-from-novuspark-app.vercel.app/auth/login">Login</a>
+  
   </nav>
 </header>
+
 <nav class="neo-bottom-nav">
   <div class="nav-item" (click)="scroll('home')" [class.active]="activeSection === 'home'">
     <i class="fas fa-home"></i>
     <span>Home</span>
   </div>
 
-  <div class="nav-item" (click)="scroll('about')" [class.active]="activeSection === 'about'">
-    <i class="fas fa-info-circle"></i> <!-- Better icon for About -->
-    <span>About Us</span>
+  <!-- UPDATED: Replaced "About Us" with "Login" – Icon: fa-sign-in-alt for login feel -->
+  <div class="nav-item" (click)="loginRedirect()" [class.active]="activeSection === 'login'">
+    <i class="fas fa-sign-in-alt"></i>
+    <span>Login</span>
   </div>
 
-  <!-- Center Floating Logo -->
+  <!-- Center Floating Logo (Unchanged) -->
   <div class="center-slot"></div>
   <div class="center-float">
     <img src="assets/ED-Globe.png" alt="EdGlobe">
   </div>
 
   <div class="nav-item" (click)="scroll('features')" [class.active]="activeSection === 'features'">
-    <i class="fas fa-th-large"></i> <!-- Good icon for Features -->
+    <i class="fas fa-th-large"></i>
     <span>Features</span>
   </div>
 

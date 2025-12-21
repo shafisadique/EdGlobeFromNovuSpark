@@ -30,6 +30,9 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     this.isScrolled = window.scrollY > 80;
     this.updateActiveSection();
   }
+  loginRedirect() {
+    window.location.href = 'https://edglobe-from-novuspark-app.vercel.app/auth/login';
+  }
 
   // NEW: Automatically detect which section is in view
   private updateActiveSection() {
